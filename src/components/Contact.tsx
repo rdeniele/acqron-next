@@ -1,9 +1,12 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { useTyping } from "@/hooks/useTyping";
+import TypedText from "@/components/TypedText";
+
+const HEADING = "Let's build the website or system your firm actually needs.";
 
 export default function Contact() {
-  const { ref: headRef, displayed, done } = useTyping("Let's build the system your firm actually needs.", 36);
+  const { ref: headRef, displayed, done } = useTyping(HEADING, 36);
   const sectionRef = useRef<HTMLElement>(null);
   const embedContainerRef = useRef<HTMLDivElement>(null);
 
@@ -55,10 +58,10 @@ export default function Contact() {
               className={!done ? "typing-cursor" : ""}
               style={{ fontSize: "clamp(2.25rem,3.5vw,3.5rem)", fontWeight: 800, letterSpacing: "-0.05em", lineHeight: 0.98, marginBottom: 20, color: "var(--ink)" }}
             >
-              {displayed}
+              <TypedText full={HEADING} shown={displayed} />
             </h2>
             <p className="contact-reveal reveal delay-2" style={{ fontSize: 15, lineHeight: 1.7, color: "var(--muted)", marginBottom: 32, maxWidth: 420 }}>
-              Book a free 30-minute strategy call. We&rsquo;ll dig into your challenge and tell you exactly how we&rsquo;d approach it — no fluff, no hard sell.
+              Book a free 30-minute strategy call. We&rsquo;ll dig into your challenge and tell you exactly how we&rsquo;d approach it. No fluff, no hard sell.
             </p>
             <div className="contact-reveal reveal delay-3" style={{ display: "flex", flexDirection: "column", gap: 14, marginTop: 8 }}>
               {[

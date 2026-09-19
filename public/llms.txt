@@ -1,47 +1,83 @@
 # Acqron
 
+> Acqron is a web design and development company based in Bacolod City, Negros Occidental, Philippines. Acqron designs and builds custom websites, landing pages, web applications, client portals, dashboards, and workflow automation for real estate brokerages, law firms, and accounting practices in the United States and the Philippines.
+
 ## What is Acqron?
 
-Acqron is a software development company based in Bacolod City, Philippines. We specialize in building custom internal tools, client portals, workflow automation systems, and web platforms for professional services firms — specifically real estate brokerages, law firms, and accounting practices.
-
-We began by building for real estate and short-term rental management companies across the United States, and we now serve both US and Philippine clients.
-
-## Who we build for
-
-- **Real Estate & Rental Firms** — property and listing management systems, tenant portals, lead tracking tools, booking platforms, and rental automation software
-- **Law Firms** — practice management software, case tracking systems, client intake portals, document management, and billing tools
-- **Accounting Firms** — financial operations software, reconciliation tools, client dashboards, reporting systems, and workflow automation
-- **General** — custom dashboards, internal tools, process automation, and marketing websites for SMEs and MSMEs
-
-## What makes Acqron different
-
-- We learn the specific workflows of your industry before writing a single line of code
-- We build working MVPs in an average of 8 weeks from kickoff
-- We train your team until they can run the software independently
-- We have a 100% client satisfaction rate across all engagements
-- We are honest about trade-offs — we will tell you when something is not worth building
-
-## Our track record
-
-Acqron has shipped software for clients across the United States and the Philippines, including vacation rental platforms, real estate investment tools, short-term rental management systems, AI automation platforms, and construction company websites.
+Acqron is a web design and development company in Bacolod City, Philippines. Acqron builds fast, mobile-first, SEO-ready websites and custom software for professional services firms. Acqron began by building for real estate and short-term rental management companies across the United States, and now serves both US and Philippine clients.
 
 ## Services
 
-1. Property & Rental Management Tools
-2. Law Firm Practice Software
-3. Accounting & Finance Operations Software
-4. Workflow & Process Automation
-5. Dashboards, Reporting & Analytics
-6. Website & Landing Page Development
+1. Web Design & Development: custom websites, landing pages, and web applications built to be fast, mobile-first, and SEO-ready
+2. Property & Rental Management Tools: listing systems, tenant portals, lead tracking, booking platforms, and rental automation
+3. Law Firm Practice Software: practice management, case tracking, client intake portals, document management, and billing tools
+4. Accounting & Finance Operations Software: financial operations tools, reconciliation systems, client dashboards, and reporting
+5. Workflow & Process Automation: custom automation that connects a firm's tools, data, and team
+6. Dashboards, Reporting & Analytics: real-time dashboards for pipeline, capacity, and performance
+
+## Who Acqron builds for
+
+- Real estate and rental firms: property and listing management systems, tenant portals, lead tracking tools, booking platforms, and websites
+- Law firms: practice management software, case tracking systems, client intake portals, and websites
+- Accounting firms: financial operations software, reconciliation tools, client dashboards, and websites
+- Small and medium businesses: custom websites, dashboards, internal tools, and process automation
+
+## How Acqron works
+
+- Acqron learns the specific workflows of a client's industry before writing any code.
+- Acqron delivers a working MVP in an average of 8 weeks from project kickoff.
+- Acqron builds in sprints so clients see working software every week.
+- Acqron trains the client's team and documents every system, and stays involved until the team can run it independently.
+- Acqron states trade-offs honestly and advises clients when something is not worth building.
+
+## Frequently asked questions
+
+**What does Acqron do?** Acqron is a web design and development company in Bacolod City, Philippines. Acqron designs and builds custom websites, landing pages, web applications, client portals, dashboards, and workflow automation for real estate brokerages, law firms, and accounting practices.
+
+**Where is Acqron based?** Acqron is based in Bacolod City, Negros Occidental, Philippines, and serves clients in the United States and the Philippines.
+
+**How long does a project take?** Acqron's average time from kickoff to a working MVP is 8 weeks. The exact timeline depends on project scope and is agreed during the initial strategy call.
+
+**Does Acqron build SEO-ready websites?** Yes. Acqron builds websites that are fast, mobile-first, and SEO-ready, with semantic HTML, structured data, and clean metadata.
+
+**How do I start a project with Acqron?** Book a free 30-minute strategy call at https://acqron.com or email info@acqron.com. Acqron responds within 24 hours.
+
+## Selected work
+
+Websites and web applications designed and built by Acqron:
+
+- Artbliss Hotel, boutique cabin retreat website: https://www.artblisshotel.com/
+- Coastal Haven Design + Build, construction and remodeling website: https://www.coastalhaven-design-build.com
+- Dwell Luxury Rentals, Flagstaff vacation rental platform: https://www.dwelluxuryrentals.com
+- Home Team Luxury Rentals, vacation rental and management platform: https://hometeamluxuryrentals.com
+- SimplaBots, AI automation platform for small business: https://simplabots.com
+- Rise Collective, real estate and hospitality parent company site: https://rise-collective.com
+- BNB Turnkey, short-term rental investment platform: https://bnb-turnkey.com
+- Paradiso Homes, ultra-luxury private residence network: https://paradiso-homes.com
+- The STR Report, short-term rental investment community: https://thestrreport.com
+- Sand Key Vacation Rentals, Texas Gulf Coast rental platform: https://www.sandkeyvacationrentals.com
+- BNB Construction, short-term rental renovation company: https://bnbconstruction.co
+- Cedar Run Resort, vacation rentals in Bradenton, Florida: https://cedarrunresort.com
+- GeoRepute, strategic business intelligence platform: https://geo-repute.vercel.app
+- CopyUp.ai, organic marketing autopilot landing page: https://copyup-landing.vercel.app
+- The Cabin Thailand, mental health retreat landing page: https://thecabinmentalhealth.vercel.app
+- Mental Health in Thailand, information hub: https://mentalhealththailand.vercel.app
+- UnscrambleX, word unscrambler about page: https://unscramblex-about-page.vercel.app
+- WordSprint, daily word game: https://wordle-answer-three.vercel.app
+- WordArcade, daily word challenge: https://nyt-crossword-six.vercel.app
+- 5 Letter Words Finder, word finder tool: https://five-letter-words.vercel.app
+- The Cabin Amsterdam, rehabilitation treatment centre landing page: https://thecabin-rehab-amsterdam.vercel.app
+- UfaBox, Muay Thai live odds landing page: https://muaythai-page.vercel.app
+- Anaphylaxis Health, clinical reference site: https://anaphylaxishealth.netlify.app
 
 ## Contact
 
 - Website: https://acqron.com
 - Email: info@acqron.com
 - Location: Bacolod City, Negros Occidental, Philippines
-- Serving: US and Philippine clients
+- Serving: United States and the Philippines
 
 ## Founders
 
-- **Ron Paragoso** — Founder & CEO. Leads strategy and client relationships.
-- **Stalingrad Dollosa** — Co-Founder & Software Engineer. Works directly with clients on technical implementation.
+- Ron Paragoso, Founder & CEO. Leads strategy and client relationships.
+- Stalingrad Dollosa, Co-Founder & Software Engineer. Works directly with clients on technical implementation.

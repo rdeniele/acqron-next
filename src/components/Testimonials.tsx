@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const testimonials = [
-  { name: "Roland Spear", role: "Principal Broker, Real Estate Firm", initials: "RS", quote: "Acqron built us a lead and listing management system that replaced three separate tools we were paying for. Our agents adopted it immediately — it was built the way they actually work." },
+  { name: "Roland Spear", role: "Principal Broker, Real Estate Firm", initials: "RS", quote: "Acqron built us a lead and listing management system that replaced three separate tools we were paying for. Our agents adopted it immediately. It was built the way they actually work." },
   { name: "Emily Uselman", role: "Chief Marketing Officer, Real Estate Group", initials: "EU", quote: "Pages look amazing! Great job! I'm always happy working with the team at Acqron. Worked with Ron for quite a while now in almost half a dozen projects and they have always delivered" },
   { name: "James Brian Leslie", role: "Founder, Real Estate Brokerage", initials: "JL", quote: "Working with Acqron felt like having a technical co-founder who actually understood real estate. They knew the terminology, the workflows, and what our team needed before we even had to explain it." },
 ];
@@ -45,7 +45,7 @@ export default function Testimonials() {
           {/* Left — tab list */}
           <div className="testi-reveal reveal delay-1">
             <h2 style={{ fontSize: "clamp(1.75rem,2.8vw,2.5rem)", fontWeight: 700, letterSpacing: "-0.04em", lineHeight: 1.05, color: "#fff", marginBottom: 44 }}>
-              What our previous clients <br/> have to say.
+              What Acqron&rsquo;s previous clients <br/> have to say.
             </h2>
             <div style={{ borderTop: "0.9px solid rgba(255,255,255,0.08)" }}>
               {testimonials.map((t, i) => (

@@ -1,17 +1,20 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { useTyping } from "@/hooks/useTyping";
+import TypedText from "@/components/TypedText";
+
+const TEAM_HEADING = "Small, focused, and relentlessly outcome-driven.";
 
 const values = [
-  { n: "01", title: "We learn your industry first", desc: "We don't show up with a generic template. We learn how your firm earns, operates, and grows — then we build around that, not around what's easiest to code." },
-  { n: "02", title: "We build for real people", desc: "No over-engineered abstractions. Whether it's your agents, paralegals, or accountants using it daily — the software is designed around their actual workflows." },
+  { n: "01", title: "We learn your industry first", desc: "We don't show up with a generic template. We learn how your firm earns, operates, and grows. Then we build around that, not around what's easiest to code." },
+  { n: "02", title: "We build for real people", desc: "No over-engineered abstractions. Whether it's your agents, paralegals, or accountants using it daily, the software is designed around their actual workflows." },
   { n: "03", title: "We stay until you own it", desc: "Our engagement doesn't end at launch. We train, document, and support until your team runs everything confidently without us." },
   { n: "04", title: "We are honest about trade-offs", desc: "We'll tell you when something isn't worth building. Our reputation is built on outcomes for our clients, not on maximizing project scope." },
 ];
 
 const team = [
   { initials: "RP", name: "Ron Paragoso", role: "Founder & CEO", bio: "Visionary leader translating complex problems into elegant software solutions and strategic direction." },
-  { initials: "SD", name: "Stalingrad Dollosa", role: "Co-Founder & Software Engineer", bio: "Technical expert who works directly with clients to integrate, customize, and solve complex product problems in real time — embedded in the firm until it's running." },
+  { initials: "SD", name: "Stalingrad Dollosa", role: "Co-Founder & Software Engineer", bio: "Technical expert who works directly with clients to integrate, customize, and solve complex product problems in real time, embedded in the firm until it's running." },
   { initials: null, name: "You?", role: "Open Role", bio: "We're growing into law and accounting. If you understand how professional services firms operate and want to build for them, we'd love to talk." },
   { initials: null, name: "Growing", role: "Open Role", bio: "Acqron is expanding its team. If you want to build tools that real firms depend on every day, we'd love to hear from you." },
 ];
@@ -19,7 +22,7 @@ const team = [
 const facts = [
   {
     stat: "97%",
-    label: "of Philippine MSMEs still manage operations manually — spreadsheets, group chats, paper trails.",
+    label: "of Philippine MSMEs still manage operations manually with spreadsheets, group chats, and paper trails.",
     source: "PSA MSME Report 2023",
     large: true,
   },
@@ -30,7 +33,7 @@ const facts = [
   },
   {
     stat: "₱2.3T",
-    label: "in real estate transactions processed in the Philippines yearly — almost none with purpose-built tools.",
+    label: "in real estate transactions processed in the Philippines yearly, almost none with purpose-built tools.",
     source: "BSP / DHSUD 2023",
   },
   {
@@ -40,13 +43,13 @@ const facts = [
   },
   {
     stat: "8 wks",
-    label: "is how long it takes us to ship a working system — not a prototype, a real tool your team uses every day.",
+    label: "is how long it takes us to ship a working system: not a prototype, but a real tool your team uses every day.",
     source: "Acqron average across all engagements",
   },
 ];
 
 export default function About() {
-  const { ref: headRef, displayed, done } = useTyping("Small, focused, and relentlessly outcome-driven.", 36);
+  const { ref: headRef, displayed, done } = useTyping(TEAM_HEADING, 36);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -76,10 +79,10 @@ export default function About() {
               Built in the Philippines.<br />Proven with US clients.
             </h2>
             <p className="about-reveal reveal delay-2" style={{ fontSize: 15, lineHeight: 1.7, letterSpacing: "-0.01em", color: "var(--muted)", marginBottom: 14 }}>
-              We cut our teeth building for real estate brokerages and rental management firms across the United States — companies that depend on their software to close deals, manage properties, and serve clients every day. That experience gave us a standard most local teams haven&rsquo;t seen yet.
+              Acqron is a web design and development company in Bacolod City, Philippines. We cut our teeth building websites and software for real estate brokerages and rental management firms across the United States, companies that depend on their technology to close deals, manage properties, and serve clients every day. That experience gave us a standard most local teams haven&rsquo;t seen yet.
             </p>
             <p className="about-reveal reveal delay-3" style={{ fontSize: 15, lineHeight: 1.7, letterSpacing: "-0.01em", color: "var(--muted)", marginBottom: 24 }}>
-              Now we&rsquo;re bringing that same bar to Philippine businesses. Real estate firms, law practices, and accounting offices here are running on spreadsheets and group chats — the same way US firms were before purpose-built tools changed everything. We&rsquo;re here to close that gap.
+              Now we&rsquo;re bringing that same bar to Philippine businesses. Real estate firms, law practices, and accounting offices here are running on spreadsheets and group chats, the same way US firms were before purpose-built tools changed everything. We&rsquo;re here to close that gap.
             </p>
             <div className="about-reveal reveal delay-4" style={{ display: "inline-flex", alignItems: "center", gap: 16, fontSize: 13, fontWeight: 500, color: "var(--muted)", flexWrap: "wrap" }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: 7 }}>
@@ -190,7 +193,7 @@ export default function About() {
             className={!done ? "typing-cursor" : ""}
             style={{ fontSize: "clamp(1.5rem,2.4vw,2.25rem)", fontWeight: 700, letterSpacing: "-0.04em", lineHeight: 1.05, marginBottom: 52, maxWidth: 520, color: "var(--ink)" }}
           >
-            {displayed}
+            <TypedText full={TEAM_HEADING} shown={displayed} />
           </h3>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 8 }} className="team-grid">
             {team.map((t, i) => (

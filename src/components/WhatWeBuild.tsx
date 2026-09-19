@@ -2,37 +2,35 @@
 import React, { useEffect, useRef } from "react";
 import { useTyping } from "@/hooks/useTyping";
 import { useWordFade } from "@/hooks/useWordFade";
+import TypedText from "@/components/TypedText";
+
+const HEADING = "Our web design and development process, from discovery to handover.";
+const SUBTITLE = "Three phases. One partner. From first conversation to your team running the finished website or web app confidently.";
 
 const cards = [
   {
     title: "We map how\nyour firm works.",
     step: "/1",
-    desc: "Every engagement starts with deep discovery. We audit your workflows, interview your team, and identify exactly where deals, cases, or filings are slipping through the cracks — before we write a single line of code.",
+    desc: "Every engagement starts with deep discovery. We audit your workflows, interview your team, and identify exactly where deals, cases, or filings are slipping through the cracks, before we write a single line of code.",
     mockup: "audit",
   },
   {
     title: "We build fast\nand iteratively.",
     step: "/2",
-    desc: "You see working software every week, not at the end of the project. We build in sprints, ship early, and adjust based on real feedback — no surprises at launch.",
+    desc: "You see working software every week, not at the end of the project. We build in sprints, ship early, and adjust based on real feedback, so there are no surprises at launch.",
     mockup: "sprint",
   },
   {
     title: "We train until\nyou own it.",
     step: "/3",
-    desc: "We don't disappear after launch. We run training sessions, document every system, and stay until your whole team — agents, paralegals, or accountants — runs it confidently without needing us.",
+    desc: "We don't disappear after launch. We run training sessions, document every system, and stay until your whole team (agents, paralegals, or accountants) runs it confidently without needing us.",
     mockup: "adoption",
   },
 ];
 
 export default function WhatWeBuild() {
-  const { ref: headRef, displayed, done } = useTyping(
-    "Map your firm. Build the right system. Make your team self-sufficient.",
-    30
-  );
-  const subRef = useWordFade(
-    "Three phases. One partner. From first conversation to your team running it confidently.",
-    38
-  );
+  const { ref: headRef, displayed, done } = useTyping(HEADING, 30);
+  const subRef = useWordFade(SUBTITLE, 38);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -69,7 +67,7 @@ export default function WhatWeBuild() {
               overflowWrap: "break-word",
             }}
           >
-            {displayed}
+            <TypedText full={HEADING} shown={displayed} />
           </h2>
           {/* Apple word-fade subtitle */}
           <p
@@ -83,7 +81,10 @@ export default function WhatWeBuild() {
               maxWidth: "36em",
               margin: "0 auto",
             }}
-          />
+          >
+            {/* Full text for crawlers; useWordFade replaces it with animated word spans on mount */}
+            <span className="sr-only">{SUBTITLE}</span>
+          </p>
         </div>
 
         {/* Feature cards — square 1/1 */}

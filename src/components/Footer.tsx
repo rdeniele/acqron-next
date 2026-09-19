@@ -8,11 +8,11 @@ export default function Footer() {
               Acq<span style={{ color: "#F97316" }}>r</span>on
             </a>
             <p style={{ fontSize: 13, lineHeight: 1.6, color: "var(--muted)", maxWidth: 240 }}>
-              We help businesses systemize, automate, and scale through custom software built to last.
+              Acqron is a web design and development company in Bacolod City, Philippines. Custom websites and software built to last.
             </p>
           </div>
           {[
-            { title: "Services", links: [["#services","Web Development"],["#services","Workflow Automation"],["#services","Dashboards & Analytics"],["#services","Technical Consulting"],["#services","Team Training"]] },
+            { title: "Services", links: [["#services","Web Design & Development"],["#services","Workflow Automation"],["#services","Dashboards & Analytics"],["#services","Technical Consulting"],["#services","Team Training"]] },
             { title: "Company",  links: [["#about","About"],["#work","Work"],["#testimonials","Testimonials"],["#contact","Contact"]] },
             { title: "Contact",  links: [["mailto:info@acqron.com","info@acqron.com"],["#contact","Book a Call"],["#about","Bacolod City, Philippines"]] },
           ].map((col) => (

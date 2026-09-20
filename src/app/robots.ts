@@ -19,6 +19,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "*", allow: "/" },
       ...AI_CRAWLERS.map((userAgent) => ({ userAgent, allow: "/" })),
     ],
-    sitemap: "https://acqron.com/sitemap.xml",
+    sitemap: "https://www.acqron.com/sitemap.xml",
   };
 }

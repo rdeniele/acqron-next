@@ -3,7 +3,7 @@ import "./globals.css";
 import CursorTrail from "@/components/CursorTrail";
 import { faqs } from "@/data/faq";
 
-const SITE = "https://acqron.com";
+const SITE = "https://www.acqron.com";
 const TITLE = "Web Design & Development Company Philippines | Acqron";
 const DESCRIPTION =
   "Acqron is a web design and development company in Bacolod City, Philippines. Fast, SEO-ready websites, web apps, and client portals for US and PH firms.";

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 const testimonials = [
   { name: "Roland Spear", role: "Principal Broker, Real Estate Firm", initials: "RS", quote: "Acqron built us a lead and listing management system that replaced three separate tools we were paying for. Our agents adopted it immediately. It was built the way they actually work." },
   { name: "Emily Uselman", role: "Chief Marketing Officer, Real Estate Group", initials: "EU", quote: "Pages look amazing! Great job! I'm always happy working with the team at Acqron. Worked with Ron for quite a while now in almost half a dozen projects and they have always delivered" },
+  { name: "Vinesh Guthari", role: "Acqron client, 2025", initials: "VG", quote: "Professional, responsive, and results-driven. Acqron transformed our vision into a beautiful, functional product." },
   { name: "James Brian Leslie", role: "Founder, Real Estate Brokerage", initials: "JL", quote: "Working with Acqron felt like having a technical co-founder who actually understood real estate. They knew the terminology, the workflows, and what our team needed before we even had to explain it." },
 ];
 

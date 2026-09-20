@@ -2,7 +2,7 @@
 import { useTyping } from "@/hooks/useTyping";
 import TypedText from "@/components/TypedText";
 
-const HEADLINE = "Web design and development for Real Estate, Law, and Accounting firms.";
+const HEADLINE = "Purpose-built software for Real Estate, Law, and Accounting firms.";
 
 export default function Hero() {
   const { ref: titleRef, displayed, done } = useTyping(HEADLINE, 34);
@@ -38,7 +38,7 @@ export default function Hero() {
                 flexShrink: 0,
               }} />
               <span style={{ fontSize: 13, fontWeight: 500, color: "var(--muted)", letterSpacing: "-0.01em" }}>
-                Web design &amp; development agency in Bacolod City, Philippines
+                Based in Bacolod City, Philippines
               </span>
             </div>
             <p style={{
@@ -47,7 +47,7 @@ export default function Hero() {
               letterSpacing: "-0.02em", marginBottom: 28,
               maxWidth: 1000,
             }}>
-              Acqron designs and builds fast, SEO-ready websites, web apps, client portals, and automation tools that professional services firms actually need, without the bloat of generic software that was never designed for your industry.
+              We build the internal tools, client portals, and automation systems that professional services firms actually need, without the bloat of generic software that was never designed for your industry.
             </p>
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
               <a href="#contact" style={orangeBtn}>Work With Us</a>

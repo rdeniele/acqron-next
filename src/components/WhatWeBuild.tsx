@@ -4,8 +4,8 @@ import { useTyping } from "@/hooks/useTyping";
 import { useWordFade } from "@/hooks/useWordFade";
 import TypedText from "@/components/TypedText";
 
-const HEADING = "Our web design and development process, from discovery to handover.";
-const SUBTITLE = "Three phases. One partner. From first conversation to your team running the finished website or web app confidently.";
+const HEADING = "Map your firm. Build the right system. Make your team self-sufficient.";
+const SUBTITLE = "Three phases. One partner. From first conversation to your team running it confidently.";
 
 const cards = [
   {

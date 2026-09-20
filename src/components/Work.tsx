@@ -4,8 +4,8 @@ import { useTyping } from "@/hooks/useTyping";
 import { useWordFade } from "@/hooks/useWordFade";
 import TypedText from "@/components/TypedText";
 
-const HEADING = "Websites and web apps we've designed and built.";
-const SUBTITLE = "Web design and development projects we've shipped across real estate, short-term rentals, hospitality, healthcare, and more.";
+const HEADING = "Ideas turned into reality.";
+const SUBTITLE = "Websites, platforms, and tools we've shipped across real estate, short-term rentals, hospitality, and beyond.";
 
 const projects = [
   {

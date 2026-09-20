@@ -4,39 +4,39 @@ import { useTyping } from "@/hooks/useTyping";
 import { useWordFade } from "@/hooks/useWordFade";
 import TypedText from "@/components/TypedText";
 
-const HEADING = "Web design, development, and software for firms that run on trust.";
-const SUBTITLE = "Real estate, law, and accounting: Acqron knows how these businesses operate, and builds websites and software accordingly.";
+const HEADING = "Built specifically for the firms that run on trust and precision.";
+const SUBTITLE = "Real estate, law, and accounting: we know how these businesses operate, and we build accordingly.";
 
 const services = [
   {
-    n: "01", name: "Web Design & Development",
-    desc: "Acqron designs and develops custom websites, landing pages, and web applications for real estate brokerages, law firms, and accounting practices. Every build is made to earn trust, generate leads, and reflect the professionalism your clients expect.",
-    bullets: ["Custom brokerage & firm websites", "Property listing & lead capture pages", "Service pages built for conversions", "SEO-ready, fast, mobile-first builds in React and Next.js"],
-  },
-  {
-    n: "02", name: "Property & Rental Management Tools",
+    n: "01", name: "Property & Rental Management Tools",
     desc: "Custom platforms built for real estate brokerages, property managers, and rental firms. They replace spreadsheets and generic CRMs with systems that match how you actually close deals and manage units.",
     bullets: ["Listing & lead management portals", "Tenant & lease tracking systems", "Automated rental collection & reminders", "Agent dashboards & commission tracking"],
   },
   {
-    n: "03", name: "Law Firm Practice Software",
+    n: "02", name: "Law Firm Practice Software",
     desc: "Internal tools and client portals for litigation, corporate, and transactional practices, built around your firm's workflows, not a vendor's idea of what a law firm should look like.",
     bullets: ["Matter & case management systems", "Client intake & document portals", "Deadline & docket tracking tools", "Billing workflow & time-entry automation"],
   },
   {
-    n: "04", name: "Accounting & Finance Operations",
+    n: "03", name: "Accounting & Finance Operations",
     desc: "We build the internal tools that let accounting firms serve more clients without growing headcount, automating the repetitive work so your team focuses on advisory, not data entry.",
     bullets: ["Client onboarding & data collection", "Automated reporting & reconciliation", "Engagement tracking dashboards", "Payroll & compliance workflow tools"],
   },
   {
-    n: "05", name: "Workflow & Process Automation",
+    n: "04", name: "Workflow & Process Automation",
     desc: "We audit how your firm actually operates, find the manual friction, and replace it with automated systems your team will actually use, whether that's document generation, email follow-ups, or approval flows.",
     bullets: ["Operations & workflow audit", "Document generation & e-signature flows", "Automated follow-up & notification systems", "Cross-tool integrations & API connections"],
   },
   {
-    n: "06", name: "Dashboards, Reporting & Analytics",
+    n: "05", name: "Dashboards, Reporting & Analytics",
     desc: "Turn raw firm data into clear, real-time decisions. We build reporting tools so principals and partners can see pipeline, capacity, and performance without waiting on a staff member to pull a spreadsheet.",
     bullets: ["Partner & principal dashboards", "Pipeline & revenue reporting", "Client retention & activity tracking", "Custom exports & scheduled reports"],
+  },
+  {
+    n: "06", name: "Website & Landing Pages",
+    desc: "High-converting websites and landing pages built specifically for real estate brokerages, law firms, and accounting practices, designed to build trust, generate leads, and reflect the professionalism your clients expect.",
+    bullets: ["Brokerage & firm marketing sites", "Property listing & lead capture pages", "Service pages optimized for conversions", "SEO-ready, fast, and mobile-first builds"],
   },
 ];
 

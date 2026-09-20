@@ -408,10 +408,10 @@ export default function Work() {
         <style>{`
           @media(max-width:900px){ .work-grid { grid-template-columns: 1fr 1fr !important; } }
           @media(max-width:540px){ .work-grid { grid-template-columns: 1fr !important; } }
-          /* Collapsed: show the first 6 rows (18 / 12 / 6 cards at 3 / 2 / 1 columns) */
-          .work-grid:not(.work-grid-all) > :nth-child(n+19) { display: none; }
-          @media(max-width:900px){ .work-grid:not(.work-grid-all) > :nth-child(n+13) { display: none; } }
-          @media(max-width:540px){ .work-grid:not(.work-grid-all) > :nth-child(n+7) { display: none; } }
+          /* Collapsed: show only the first 3 rows (9 / 6 / 3 cards at 3 / 2 / 1 columns), then cut */
+          .work-grid:not(.work-grid-all) > :nth-child(n+10) { display: none; }
+          @media(max-width:900px){ .work-grid:not(.work-grid-all) > :nth-child(n+7) { display: none; } }
+          @media(max-width:540px){ .work-grid:not(.work-grid-all) > :nth-child(n+4) { display: none; } }
         `}</style>
       </section>
 

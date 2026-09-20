@@ -225,3 +225,96 @@ body {
   text-transform: uppercase;
   color: var(--ink);
 }
+
+/* ── FACT CARD DETAIL POPOVER (About: "The gap we're here to close") ── */
+/* The slot adds no box of its own, so the grid still lays out the cards exactly as before */
+.fact-slot { display: contents; }
+.fact-card { transition: border-color 240ms var(--ease), box-shadow 240ms var(--ease); }
+.fact-card:hover,
+.fact-slot.is-open .fact-card {
+  border-color: rgba(26,25,22,0.22);
+  box-shadow: 0 10px 36px rgba(26,25,22,0.08);
+}
+
+.fact-pop {
+  --fact-pop-text: rgba(26,25,22,0.66); /* darker than --muted: this is reading text, keep it above AA contrast */
+  position: absolute; /* against .carousel-grid, which is position:relative */
+  top: 0;
+  left: 0;
+  z-index: 40;
+  width: min(22.5rem, calc(100vw - 32px));
+  padding: 18px 20px 16px;
+  background: var(--bg);
+  color: var(--ink);
+  border: 0.9px solid var(--border);
+  border-radius: 2px;
+  box-shadow: 0 16px 48px rgba(26,25,22,0.14), 0 2px 8px rgba(26,25,22,0.06);
+  text-align: left;
+  cursor: default;
+  /* closed: keep in the DOM (readable to crawlers and assistive tech) but invisible and inert */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 180ms var(--ease), transform 180ms var(--ease), visibility 0s linear 180ms;
+}
+.fact-slot.is-open .fact-pop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+  transition-delay: 0s;
+}
+/* invisible bridge so the pointer can travel from the card into the popover without closing it */
+.fact-pop::before { content: ""; position: absolute; left: 0; right: 0; height: 14px; }
+.fact-pop[data-side="above"]::before { top: 100%; }
+.fact-pop[data-side="below"]::before { bottom: 100%; }
+.fact-pop[data-side="right"]::before { top: 0; bottom: 0; left: auto; right: 100%; width: 14px; height: auto; }
+.fact-pop[data-side="left"]::before { top: 0; bottom: 0; left: 100%; right: auto; width: 14px; height: auto; }
+/* brand corner, same motif as the cards */
+.fact-pop::after {
+  content: "";
+  position: absolute;
+  top: -0.9px; right: -0.9px;
+  width: 14px; height: 14px;
+  background: var(--grad);
+}
+.fact-pop-body { max-height: calc(100vh - 24px - 34px); overflow-y: auto; }
+
+.fact-pop-title { font-size: 14px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.3; color: var(--ink); margin-bottom: 8px; padding-right: 14px; }
+.fact-pop-text { font-size: 12.5px; line-height: 1.55; letter-spacing: -0.01em; color: var(--fact-pop-text); }
+.fact-pop-list { list-style: none; margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+.fact-pop-list li { position: relative; padding-left: 14px; font-size: 12.5px; line-height: 1.5; letter-spacing: -0.01em; color: var(--fact-pop-text); }
+.fact-pop-list li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 4px; height: 4px; border-radius: 50%; background: var(--orange); }
+.fact-pop-steps { list-style: none; margin-top: 10px; display: flex; flex-wrap: wrap; align-items: center; row-gap: 4px; }
+.fact-pop-steps li { font-size: 12px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+.fact-pop-steps li:not(:last-child)::after { content: "\2192"; margin: 0 7px; font-weight: 400; color: var(--muted-2); }
+.fact-pop-acqron { margin-top: 14px; padding-top: 12px; border-top: 0.9px solid var(--border); }
+.fact-pop-label { display: block; font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--orange); margin-bottom: 5px; }
+.fact-pop-strong { color: var(--ink-2); font-weight: 500; }
+.fact-pop-source { margin-top: 12px; font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: rgba(26,25,22,0.5); }
+
+/* Tap / keyboard affordance. Hidden for mouse users so the default card stays clean. */
+.fact-toggle {
+  position: absolute;
+  top: var(--fact-pad, 24px);
+  right: var(--fact-pad, 24px);
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0;
+  color: var(--fact-fg, var(--ink));
+  background: transparent;
+  border: 0.9px solid currentColor;
+  border-radius: 2px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 180ms var(--ease);
+}
+.fact-toggle:focus-visible { opacity: 1; outline: 2px solid var(--orange); outline-offset: 3px; }
+@media (hover: none) { .fact-toggle { opacity: 0.55; } }
+@media (hover: hover) { .fact-toggle:not(:focus-visible) { pointer-events: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .fact-card { transition: none; }
+  .fact-pop { transform: none; transition: opacity 120ms linear, visibility 0s linear 120ms; }
+}

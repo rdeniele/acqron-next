@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import { useTyping } from "@/hooks/useTyping";
 import TypedText from "@/components/TypedText";
+import FactCard, { type Fact } from "@/components/FactCard";
 
 const TEAM_HEADING = "Small, focused, and relentlessly outcome-driven.";
 
@@ -19,34 +20,85 @@ const team = [
   { initials: null, name: "Growing", role: "Open Role", bio: "Acqron is expanding its team. If you want to build tools that real firms depend on every day, we'd love to hear from you." },
 ];
 
-const facts = [
+const facts: Fact[] = [
   {
     stat: "97%",
     label: "of Philippine MSMEs still manage operations manually with spreadsheets, group chats, and paper trails.",
     source: "PSA MSME Report 2023",
     large: true,
+    detail: {
+      title: "What manual operations look like",
+      intro: "In practice, day-to-day work runs across spreadsheets, chat threads, and paper files instead of one shared system.",
+      points: [
+        "Duplicated work: the same details re-entered in several places.",
+        "Scattered information: the latest version sits in a chat or a sheet.",
+        "Manual follow-ups: reminders depend on someone remembering.",
+        "No central view: checking status means asking around.",
+      ],
+      acqron: "Acqron replaces the patchwork with one purpose-built system that matches how your team already works.",
+    },
   },
   {
     stat: "< 12%",
     label: "of local law firms have practice management software of any kind.",
     source: "IBP Survey 2022",
+    detail: {
+      title: "What practice management software does",
+      intro: "It gives a firm one place to run every matter. Without it, deadlines, files, and billing drift across separate tools and inboxes.",
+      points: [
+        "Case and matter tracking",
+        "Documents and client communication",
+        "Deadlines and docketing",
+        "Billing, time entry, and internal workflows",
+      ],
+      acqron: "Acqron builds this around your firm's own workflows, so cases, documents, deadlines, and billing live in one system.",
+    },
   },
   {
     stat: "₱2.3T",
     label: "in real estate transactions processed in the Philippines yearly, almost none with purpose-built tools.",
     source: "BSP / DHSUD 2023",
+    detail: {
+      title: "The scale behind ₱2.3T",
+      intro: "That is the yearly value of real estate transactions cited here. Each deal involves several parties and many documents, often coordinated across spreadsheets and messaging apps.",
+      points: [
+        "Property tracking across listings and status",
+        "Lead management and follow-up",
+        "Document workflows and approvals",
+        "Transaction coordination and reporting",
+      ],
+      acqron: "That gap is an opportunity for purpose-built internal systems that keep listings, leads, documents, and reporting connected.",
+    },
   },
   {
     stat: "1 in 3",
     label: "accounting firms in the Visayas still reconciles books entirely in Excel.",
     source: "BOA Industry Study 2023",
+    detail: {
+      title: "Why Excel-only accounting strains at scale",
+      intro: "Spreadsheets are flexible, but keeping them accurate by hand gets harder as the number of clients grows.",
+      points: [
+        "Reconciliation: matching entries line by line, every period.",
+        "Version control: knowing which file is current.",
+        "Data entry: the same figures typed in more than once.",
+        "Reporting and collaboration: hard to share one file.",
+      ],
+      acqron: "Software removes the repetitive steps and gives the whole team one live view of each client's books.",
+    },
   },
   {
     stat: "8 wks",
     label: "is how long it takes us to ship a working system: not a prototype, but a real tool your team uses every day.",
     source: "Acqron average across all engagements",
+    detail: {
+      title: "What we mean by a working system",
+      intro: "A production-oriented tool your team uses in their daily work, not a visual prototype or a demo.",
+      steps: ["Understand the workflow", "Design the solution", "Build", "Test", "Deploy"],
+      acqron: "We keep engagements small, focused, and outcome-driven, so the first release solves a real problem.",
+    },
   },
 ];
+
 
 export default function About() {
   const { ref: headRef, displayed, done } = useTyping(TEAM_HEADING, 36);
@@ -110,8 +162,8 @@ export default function About() {
           </div>
         </div>
 
-        {/* Philippine market facts grid */}
-        <div className="about-reveal reveal">
+        {/* Philippine market facts grid. Raised so hover popovers paint above the Team block below. */}
+        <div className="about-reveal reveal" style={{ position: "relative", zIndex: 2 }}>
           <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", color: "var(--muted-2)", marginBottom: 16 }}>
             The gap we're here to close
           </p>
@@ -121,67 +173,13 @@ export default function About() {
               gridTemplateColumns: "5fr 3fr 3fr",
               gridTemplateRows: "auto auto",
               gap: "clamp(4px, 0.4vw, 8px)",
+              position: "relative", // containing block for the fact popovers
             }}
             className="carousel-grid"
           >
-            {facts.map((f, i) => {
-              const isLarge = i === 0;
-              const cellStyle: React.CSSProperties = isLarge
-                ? { gridColumn: "1", gridRow: "1 / 3" }
-                : {};
-              return (
-                <div
-                  key={i}
-                  style={{
-                    ...cellStyle,
-                    borderRadius: 2,
-                    overflow: "hidden",
-                    position: "relative",
-                    background: isLarge ? "var(--ink)" : "var(--cream)",
-                    border: "0.9px solid var(--border)",
-                    padding: "clamp(20px, 3vw, 36px)",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                    aspectRatio: isLarge ? undefined : "16 / 10",
-                  }}
-                >
-                  {isLarge && (
-                    <div style={{ position: "absolute", top: -0.9, right: -0.9, width: 20, height: 20, background: "linear-gradient(135deg,#EF4444,#F97316 50%,#F59E0B)" }} />
-                  )}
-                  <div style={{
-                    fontWeight: 800,
-                    letterSpacing: "-0.05em",
-                    lineHeight: 0.9,
-                    fontSize: isLarge ? "clamp(3.5rem,8vw,6rem)" : "clamp(1.75rem,4vw,2.75rem)",
-                    color: isLarge ? "#fff" : "var(--ink)",
-                    marginBottom: isLarge ? 32 : 12,
-                  }}>
-                    {f.stat}
-                  </div>
-                  <div>
-                    <p style={{
-                      fontSize: isLarge ? 15 : 12,
-                      lineHeight: 1.55,
-                      letterSpacing: "-0.02em",
-                      color: isLarge ? "rgba(245,245,244,0.65)" : "var(--muted)",
-                      marginBottom: 10,
-                    }}>
-                      {f.label}
-                    </p>
-                    <span style={{
-                      fontSize: 10,
-                      fontWeight: 600,
-                      letterSpacing: ".06em",
-                      textTransform: "uppercase",
-                      color: isLarge ? "rgba(245,245,244,0.28)" : "var(--muted-2)",
-                    }}>
-                      {f.source}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
+            {facts.map((f, i) => (
+              <FactCard key={f.stat} fact={f} gridStyle={i === 0 ? { gridColumn: "1", gridRow: "1 / 3" } : undefined} />
+            ))}
           </div>
         </div>
 
@@ -223,8 +221,8 @@ export default function About() {
           .team-grid  { grid-template-columns:repeat(2,1fr) !important; }
           /* On tablet: collapse to 2-col, large cell stays portrait but only spans row 1 */
           .carousel-grid { grid-template-columns:1fr 1fr !important; grid-template-rows:auto !important; }
-          .carousel-grid > div:first-child { grid-column:1 !important; grid-row:auto !important; }
-          .carousel-grid > div:first-child > div { aspect-ratio:16/10 !important; height:auto !important; }
+          .carousel-grid > .fact-slot:first-child > .fact-card { grid-column:1 !important; grid-row:auto !important; }
+          .carousel-grid > .fact-slot:first-child > .fact-card > div { aspect-ratio:16/10 !important; height:auto !important; }
         }
         @media(max-width:600px){
           .team-grid  { grid-template-columns:1fr !important; }

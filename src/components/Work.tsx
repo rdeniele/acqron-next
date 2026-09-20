@@ -289,22 +289,20 @@ export default function Work() {
   const { ref: headRef, displayed, done } = useTyping(HEADING, 42);
   const subRef = useWordFade(SUBTITLE, 40);
   const sectionRef = useRef<HTMLElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
-  const focusAfterExpand = useRef<HTMLElement | null>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
   const [showAll, setShowAll] = useState(false);
 
-  const showMore = () => {
-    // cards still hidden by the collapsed grid have no offsetParent
-    const firstHidden = Array.from(gridRef.current?.children ?? []).find((el) => (el as HTMLElement).offsetParent === null);
-    focusAfterExpand.current = (firstHidden as HTMLElement | undefined) ?? null;
-    setShowAll(true);
+  const toggleShowAll = () => {
+    const collapsing = showAll;
+    setShowAll(!showAll);
+    if (collapsing) {
+      // The grid gets shorter, so bring the button back into view instead of leaving the page mid-list
+      requestAnimationFrame(() => {
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        toggleRef.current?.scrollIntoView({ block: "center", behavior: reduce ? "auto" : "smooth" });
+      });
+    }
   };
-
-  useEffect(() => {
-    if (!showAll) return;
-    focusAfterExpand.current?.focus({ preventScroll: true });
-    focusAfterExpand.current = null;
-  }, [showAll]);
 
   useEffect(() => {
     const els = sectionRef.current?.querySelectorAll<HTMLElement>(".work-reveal:not(.in)");
@@ -362,7 +360,7 @@ export default function Work() {
           </div>
 
           {/* Cards — Poetic: wide 16/10 landscape image + thin 56px metadata strip */}
-          <div id="work-grid" ref={gridRef} style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "clamp(6px, 0.6vw, 12px)" }} className={`work-grid${showAll ? " work-grid-all" : ""}`}>
+          <div id="work-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "clamp(6px, 0.6vw, 12px)" }} className={`work-grid${showAll ? " work-grid-all" : ""}`}>
             {projects.map((p, i) => (
               <div
                 key={p.key}
@@ -401,21 +399,19 @@ export default function Work() {
             ))}
           </div>
 
-          {!showAll && (
-            <div style={{ display: "flex", justifyContent: "center", marginTop: 48 }}>
-              <button type="button" onClick={showMore} aria-controls="work-grid" aria-label="Show more projects" style={showMoreBtn}>
-                Show More
-              </button>
-            </div>
-          )}
+          <div style={{ display: "flex", justifyContent: "center", marginTop: 48 }}>
+            <button ref={toggleRef} type="button" onClick={toggleShowAll} aria-expanded={showAll} aria-controls="work-grid" style={showMoreBtn}>
+              {showAll ? "Show Less" : "Show More"}
+            </button>
+          </div>
         </div>
         <style>{`
           @media(max-width:900px){ .work-grid { grid-template-columns: 1fr 1fr !important; } }
           @media(max-width:540px){ .work-grid { grid-template-columns: 1fr !important; } }
-          /* Collapsed: 12 original cards + first 3 rows of the newer ones (3 / 2 / 1 columns) */
-          .work-grid:not(.work-grid-all) > :nth-child(n+22) { display: none; }
-          @media(max-width:900px){ .work-grid:not(.work-grid-all) > :nth-child(n+19) { display: none; } }
-          @media(max-width:540px){ .work-grid:not(.work-grid-all) > :nth-child(n+16) { display: none; } }
+          /* Collapsed: show the first 6 rows (18 / 12 / 6 cards at 3 / 2 / 1 columns) */
+          .work-grid:not(.work-grid-all) > :nth-child(n+19) { display: none; }
+          @media(max-width:900px){ .work-grid:not(.work-grid-all) > :nth-child(n+13) { display: none; } }
+          @media(max-width:540px){ .work-grid:not(.work-grid-all) > :nth-child(n+7) { display: none; } }
         `}</style>
       </section>
 

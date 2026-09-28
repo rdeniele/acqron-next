@@ -284,6 +284,18 @@ const projects = [
     alt: "Tambay & Friends dashboard showing a list of tambayan rooms and a virtual pet panel for a cat named Mung",
     link: "https://www.tambay.site/app",
   },
+  {
+    key: "wisker",
+    cat: "EdTech · Study Platform",
+    title: "Wisker",
+    fullTitle: "Wisker: AI Study Companion & Flashcard Platform",
+    desc: "Study dashboard that turns class notes into quizzes and flashcards per subject, with streak tracking and a mascot to keep learners motivated to keep going.",
+    tags: ["Web App", "EdTech", "AI", "SaaS"],
+    img: "/work/wisker.png",
+    hero: "/work/wisker.png",
+    alt: "Wisker dashboard showing a subject to resume, quiz and flashcard buttons, study streak, and subject/notes stats",
+    link: "https://wisker-web.vercel.app",
+  },
 ];
 
 // Same pill ghost button used for "See Our Work" in Hero

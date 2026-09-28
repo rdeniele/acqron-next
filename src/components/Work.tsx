@@ -272,6 +272,18 @@ const projects = [
     alt: "Anaphylaxis Health reference site with the headline 'Anaphylaxis: definition, symptoms, and treatment' and an at-a-glance fact panel",
     link: "https://anaphylaxishealth.netlify.app",
   },
+  {
+    key: "tambay",
+    cat: "Social · Community Platform",
+    title: "Tambay & Friends",
+    fullTitle: "Tambay & Friends: Hang-Out Rooms for Your Squad",
+    desc: "Discord-style social hub built around \"tambayans,\" lightweight rooms where friends, gaming groups, and classmates can hang out, chat, and keep a virtual pet together. Grew to 330 users in its first 3 days.",
+    tags: ["Web App", "Social", "Community", "Real-Time"],
+    img: "/work/tambay-and-friends.png",
+    hero: "/work/tambay-and-friends.png",
+    alt: "Tambay & Friends dashboard showing a list of tambayan rooms and a virtual pet panel for a cat named Mung",
+    link: "https://www.tambay.site/app",
+  },
 ];
 
 // Same pill ghost button used for "See Our Work" in Hero

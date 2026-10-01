@@ -261,18 +261,6 @@ const projects = [
     link: "https://anaphylaxishealth.netlify.app",
   },
   {
-    key: "copyup",
-    cat: "Marketing Automation · SaaS",
-    title: "CopyUp.ai",
-    fullTitle: "CopyUp.ai: Organic Marketing Autopilot Landing Page",
-    desc: "Product landing page for an organic marketing platform that automates SEO, GEO, AI search, content, and social publishing. Set up your business once and let the platform handle the rest.",
-    tags: ["Website", "SaaS", "Marketing", "Landing Page"],
-    img: "/work/copyup-ai-organic-marketing.webp",
-    hero: "/work/copyup-ai-organic-marketing.webp",
-    alt: "CopyUp.ai landing page hero with a laptop showing the dashboard and the headline 'One Hour. Six Months of Organic Marketing.'",
-    link: "https://copyup-landing.vercel.app",
-  },
-  {
     key: "the-cabin-thailand",
     cat: "Healthcare · Residential Treatment",
     title: "The Cabin Thailand",
@@ -283,18 +271,6 @@ const projects = [
     hero: "/work/the-cabin-thailand-mental-health-retreat.webp",
     alt: "The Cabin Thailand landing page with the headline 'Depression and Mental Health Retreat in Thailand' over a garden villa",
     link: "https://thecabinmentalhealth.vercel.app",
-  },
-  {
-    key: "unscramblex",
-    cat: "Word Games · Web Tool",
-    title: "UnscrambleX",
-    fullTitle: "UnscrambleX: Free Word Unscrambler & Game Solvers",
-    desc: "About page and product overview for a free word unscrambler powering a family of game-specific solvers. Drop in a rack of letters and get every valid word, ranked by score, with an interactive letter-tile demo.",
-    tags: ["Website", "Web Tool", "Word Games", "SEO"],
-    img: "/work/unscramblex-word-unscrambler.webp",
-    hero: "/work/unscramblex-word-unscrambler.webp",
-    alt: "UnscrambleX about page with the headline 'Every valid word your letters can form' and an interactive letter tile demo",
-    link: "https://unscramblex-about-page.vercel.app",
   },
 ];
 
